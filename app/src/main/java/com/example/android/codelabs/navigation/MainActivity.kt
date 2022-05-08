@@ -25,8 +25,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.onNavDestinationSelected
 import com.google.android.material.navigation.NavigationView
 
 /**
@@ -122,8 +124,8 @@ class MainActivity : AppCompatActivity() {
 //        // Have the NavigationUI look for an action or destination matching the menu
 //        // item id and navigate there if found.
 //        // Otherwise, bubble up to the parent.
-//        return item.onNavDestinationSelected(findNavController(R.id.my_nav_host_fragment))
-//                || super.onOptionsItemSelected(item)
+        return item.onNavDestinationSelected(findNavController(R.id.my_nav_host_fragment))
+                || super.onOptionsItemSelected(item)
         // TODO END STEP 9.2
     }
 
